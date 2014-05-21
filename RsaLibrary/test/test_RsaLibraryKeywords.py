@@ -32,10 +32,10 @@ class TestKeyStoreLocation(unittest.TestCase):
         os.mkdir(self.validHomeDir)
         os.mkdir(self.validLocalDir)
 
-
     def tearDown(self):
         os.rmdir(self.validHomeDir)
         os.rmdir(self.validLocalDir)
+        
 
     def testValidHomeLocation(self):
         self.assertEqual(self.encryptionInstance.RSA_set_keystore_location(keyStoreFolder=self.validHomeDir), 
@@ -86,7 +86,7 @@ class TestSSH(unittest.TestCase):
         self.keyStoreDir = os.path.join(os.path.expanduser('~'), "keyStoreSSHTest")
         self.encryptionInstance.RSA_generate_new_keys(self.keyStoreDir) # Creates new set of keys
         self.encryptionInstance.RSA_set_keystore_location(self.keyStoreDir)
-        self.hostName = "192.168.126.147"
+        self.hostName = "localhost"
         self.hostUser = "tc"
         self.hostPass = "Password@01"
         

@@ -50,8 +50,7 @@ class keywords(object):
 
         # Tests for key store existence
         if not os.path.exists(self.keyStore):
-            raise Exception("KeyStore does not exist: %s. \
-                             Maybe you need to create some keys."
+            raise Exception("KeyStore does not exist: %s. Maybe you need to create some keys."
                             % self.keyStore)
 
         return self.keyStore
