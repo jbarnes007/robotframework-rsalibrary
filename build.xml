@@ -1,0 +1,13 @@
+<project name="Unit Test RobotFramework RSA Library" basedir="." default="build">
+
+	<property name="unit.test.path" value="RsaLibrary/test/"/>
+	<property name="library.path" value="./"/>	
+	<target name="build" description="Perform Unit Test">
+  		<echo>Unit Test Start</echo>
+    	<exec dir="${unit.test.path}" executable="/usr/local/bin/python2.7" failonerror="true">
+	    	<env key="PYTHONPATH" path="${library.path}"/>
+    		<arg line="test_RsaLibraryKeywords.py" />
+		</exec>
+		<echo>Unit Test End</echo>
+  </target>
+</project>
