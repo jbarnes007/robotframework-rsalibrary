@@ -4,7 +4,7 @@
 	<property name="library.path" value="./"/>	
 	<target name="build" description="Perform Unit Test">
   		<echo>Unit Test Start</echo>
-    	<exec dir="${unit.test.path}" executable="/usr/local/bin/python2.7" failonerror="true">
+    	<exec dir="${unit.test.path}" executable="${python.executable}" failonerror="true">
 	    	<env key="PYTHONPATH" path="${library.path}"/>
     		<arg line="test_RsaLibraryKeywords.py" />
 		</exec>
